@@ -13,6 +13,11 @@ public class Main {
         System.out.println();
 
         stringReverse("Hello");
+        System.out.println();
+
+        isPalindrome("ERE");
+        isPalindrome("Allo");
+
 
     }
 
@@ -57,5 +62,12 @@ public class Main {
         System.out.println(enterTheString + " -> " + result);
     }
 
-
+    static void isPalindrome(String enterTheString){
+        char[] charArray = enterTheString.toCharArray();
+        String result = "";
+        for (int i = charArray.length - 1; i >= 0; i--) {
+            result += charArray[i];
+        }
+        System.out.println(enterTheString + " -> " + enterTheString.equals(result));
+    }
 }
