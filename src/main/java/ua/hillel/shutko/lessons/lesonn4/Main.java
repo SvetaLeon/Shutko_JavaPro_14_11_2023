@@ -47,6 +47,18 @@ public class Main {
         System.out.println("Index " + value3);
 
         // charAt
+        String textString = "Never look back";
+        int count = 0;
+        for (int i = 0; i <= textString.length() - 1; i++) {
+            if (textString.charAt(i) == 'k') {
+                count++;
+            }
+        }
+        System.out.println("Frequency of t is: " + count);
+
+        String name = "javatpoint";
+        char ch = name.charAt(4);//returns the char value at the 4th index
+        System.out.println(ch);
         System.out.print("JavaBasic".charAt(0));
         System.out.print("JavaBasic".charAt(1));
         System.out.print("JavaBasic".charAt(2));
@@ -76,6 +88,24 @@ public class Main {
         System.out.println("Contains sequence 'example': " + str_Sample.contains("example"));
         System.out.println("Contains sequence 'is String': " + str_Sample.contains("is String"));
 
+
+        //startWith
+        String line = "java string split method by javatpoint";
+        System.out.println(line.startsWith("ja"));  // true
+        System.out.println(line.startsWith("java string"));   // true
+        System.out.println(line.startsWith("Java string"));  // false as 'j' and 'J' are different
+
+        //valueOf
+        char ch1 = 'A';
+        char ch2 = 'B';
+        String ss1 = String.valueOf(ch1);
+        String ss2 = String.valueOf(ch2);
+        System.out.println(ss1);
+        System.out.println(ss2);
+
+        System.out.println(reverseString("Hello"));
+        isPalindrome("ERE");
+        isPalindrome("Allo");
     }
 
     static void findSymbol(String findSymbol, char symbol) {
@@ -84,4 +114,23 @@ public class Main {
         System.out.println("Character: " + symbol);
         System.out.println("Index " + value);
     }
+
+//    public static String reverseString(String str) {
+//        char[] array = str.toCharArray();
+//        String result = "";
+//        for (int i = array.length - 1; i >= 0; i--) {
+//            result += array[i];
+//        }
+//        return result;
+//    }
+
+    public static String reverseString(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+
+    static void isPalindrome(String enterTheString){
+        String result = new StringBuilder(enterTheString).reverse().toString();
+        System.out.println(enterTheString + " -> " + enterTheString.equals(result));
+    }
+
 }
