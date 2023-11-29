@@ -70,4 +70,10 @@ public class Main {
         }
         System.out.println(enterTheString + " -> " + enterTheString.equals(result));
     }
+
+    // method isPalindrome version two
+//    static void isPalindrome(String enterTheString){
+//        String result = new StringBuilder(enterTheString).reverse().toString();
+//        System.out.println(enterTheString + " -> " + enterTheString.equals(result));
+//    }
 }
