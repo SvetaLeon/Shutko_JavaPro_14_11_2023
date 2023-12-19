@@ -7,21 +7,34 @@ public class TelephoneDirectory {
 
     List<Recording> listRecording = new ArrayList<>();
 
-    public List<Recording> getListRecording() {
-        return listRecording;
-    }
-
     public void add(Recording newSubscriber) {
         listRecording.add(newSubscriber);
     }
 
     public void find(String name) {
+        List<Recording> result = new ArrayList<>();
         for (Recording r : listRecording) {
-            if (r.equals(name)) {
-                System.out.println(r);
+            if (r.getName().equals(name)) {
+                result.add(r);
+                System.out.println(r.getName() + " " + r.getPhone());
                 break;
             }
         }
-        System.out.println("null");
+        if (result.isEmpty()) {
+            System.out.println("null");
+        }
+    }
+
+    public void findAll(String name) {
+        List<Recording> result = new ArrayList<>();
+        for (Recording r : listRecording) {
+            if (r.getName().equals(name)) {
+                result.add(r);
+                System.out.println(r.getName() + " " + r.getPhone());
+            }
+        }
+        if (result.isEmpty()) {
+            System.out.println("null");
+        }
     }
 }

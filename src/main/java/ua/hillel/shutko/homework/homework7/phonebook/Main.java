@@ -1,18 +1,31 @@
 package ua.hillel.shutko.homework.homework7.phonebook;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
 
         TelephoneDirectory telephoneDirectory = new TelephoneDirectory();
-        telephoneDirectory.add(new Recording("Oleg", "0685783855"));
-        telephoneDirectory.add(new Recording("Sveta", "0665784955"));
-        telephoneDirectory.add(new Recording("Oleg", "0444444855"));
-        telephoneDirectory.add(new Recording("Tom", "0785555855"));
-        telephoneDirectory.find("Sveta");
-        System.out.println(telephoneDirectory.getListRecording());
+
+        telephoneDirectory.add(new Recording("Oleg", "0631113855"));
+        telephoneDirectory.add(new Recording("Maxim", "0937595444"));
+        telephoneDirectory.add(new Recording("Alice", "0665994333"));
+        telephoneDirectory.add(new Recording("Oleg", "0504444111"));
+        telephoneDirectory.add(new Recording("Eva", "0567777666"));
+        telephoneDirectory.add(new Recording("Igor", "0663335444"));
+        telephoneDirectory.add(new Recording("Maxim", "0985555999"));
+        telephoneDirectory.add(new Recording("Maxim", "0986985222"));
+        telephoneDirectory.add(new Recording("Natalia", "0664411258"));
+
+        telephoneDirectory.find("Alice");
+        telephoneDirectory.find("Oleg");
+        telephoneDirectory.find("Igor");
+        telephoneDirectory.find("Petro");
+        telephoneDirectory.find("Eva");
+        telephoneDirectory.find("Julia");
+
+        System.out.println();
+        telephoneDirectory.findAll("Maxim");
+        telephoneDirectory.findAll("Oleg");
+        telephoneDirectory.findAll("Natalia");
+        telephoneDirectory.findAll("Denys");
     }
 }
