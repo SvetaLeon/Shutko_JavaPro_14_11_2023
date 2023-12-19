@@ -36,7 +36,9 @@ public class Main {
         findUnique(integerList);
         System.out.println();
 
-        calcOccurance(wordList);
+        System.out.println("Method  calcOccurrence");
+        System.out.println(wordList);
+        calcOccurrence(wordList);
     }
 
     public static void countOccurrence(List<String> list, String word) {
@@ -72,11 +74,9 @@ public class Main {
         System.out.println("New list containing only unique numbers " + uniqueNumberList);
     }
 
-    public static void calcOccurance(List<String> list) {
+    public static void calcOccurrence(List<String> list) {
         List<String> array1 = new ArrayList<>();
         List<String> array2 = new ArrayList<>();
-        int counter = 0;
-
         for (String s : list) {
             if ((array1.indexOf(0) == array1.indexOf(s))) {
                 array1.add(s);
@@ -85,14 +85,28 @@ public class Main {
             }
         }
         array1.removeAll(array2);
-        System.out.println(array1);
         for (int i = 0; i < array1.size(); i++) {
             System.out.println(array1.get(i) + ": 1");
         }
 
-        System.out.println(array2);
+        List<String> array3 = new ArrayList<>();
+        for (String s : array2) {
+            if ((array3.indexOf(0) == array3.indexOf(s))) {
+                array3.add(s);
+            } else {
+                array3.remove(s);
+            }
+        }
+        for (int i = 0; i < array3.size(); i++) {
+            System.out.println(array3.get(i) + ": 2");
+        }
+
+        array2.removeAll(array3);
         for (int i = 0; i < array2.size(); i++) {
-            System.out.println(array2.get(i) + ": " + counter);
+            if (i == (i % 2)) {
+                continue;
+            }
+            System.out.println(array2.get(i) + ": 3");
         }
     }
 }
