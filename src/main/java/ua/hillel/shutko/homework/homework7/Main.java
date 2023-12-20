@@ -7,18 +7,19 @@ public class Main {
         System.out.println("Method countOccurrence");
         List<String> wordList = new ArrayList<>();
         wordList.add("Cat");
-        wordList.add("Dog");
-        wordList.add("Wolf");
-        wordList.add("Wolf");
-        wordList.add("Horse");
         wordList.add("Fox");
         wordList.add("Lion");
-        wordList.add("Pig");
-        wordList.add("Cow");
-        wordList.add("Dog");
         wordList.add("Horse");
-        wordList.add("Sheep");
+        wordList.add("Dog");
+        wordList.add("Cow");
+        wordList.add("Wolf");
+        wordList.add("Lion");
+        wordList.add("Horse");
         wordList.add("Fox");
+        wordList.add("Wolf");
+        wordList.add("Pig");
+        wordList.add("Dog");
+        wordList.add("Sheep");
         wordList.add("Wolf");
         wordList.add("Dog");
         countOccurrence(wordList, "Wolf");
@@ -36,7 +37,7 @@ public class Main {
         findUnique(integerList);
         System.out.println();
 
-        System.out.println("Method  calcOccurrence");
+        System.out.println("Method calcOccurrence");
         System.out.println(wordList);
         calcOccurrence(wordList);
     }
@@ -75,38 +76,25 @@ public class Main {
     }
 
     public static void calcOccurrence(List<String> list) {
-        List<String> array1 = new ArrayList<>();
-        List<String> array2 = new ArrayList<>();
-        for (String s : list) {
-            if ((array1.indexOf(0) == array1.indexOf(s))) {
-                array1.add(s);
+        List<String> listWords = new ArrayList<>();
+        List<String> repeatedWords = new ArrayList<>();
+        List<String> uniqueWords = new ArrayList<>();
+        for (String word : list) {
+            if ((uniqueWords.indexOf(0) == uniqueWords.indexOf(word))) {
+                uniqueWords.add(word);
             } else {
-                array2.add(s);
+                repeatedWords.add(word);
             }
         }
-        array1.removeAll(array2);
-        for (int i = 0; i < array1.size(); i++) {
-            System.out.println(array1.get(i) + ": 1");
-        }
-
-        List<String> array3 = new ArrayList<>();
-        for (String s : array2) {
-            if ((array3.indexOf(0) == array3.indexOf(s))) {
-                array3.add(s);
-            } else {
-                array3.remove(s);
+        uniqueWords.removeAll(repeatedWords);
+        listWords.addAll(uniqueWords);
+        for (String word : repeatedWords) {
+            if ((listWords.indexOf(0) == listWords.indexOf(word))) {
+                listWords.add(word);
             }
         }
-        for (int i = 0; i < array3.size(); i++) {
-            System.out.println(array3.get(i) + ": 2");
-        }
-
-        array2.removeAll(array3);
-        for (int i = 0; i < array2.size(); i++) {
-            if (i == (i % 2)) {
-                continue;
-            }
-            System.out.println(array2.get(i) + ": 3");
+        for (String word : listWords) {
+            System.out.println(word + ": " + Collections.frequency(list, word));
         }
     }
 }
