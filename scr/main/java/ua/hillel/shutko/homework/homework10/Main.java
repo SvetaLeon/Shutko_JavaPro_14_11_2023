@@ -83,8 +83,7 @@ public class Main {
     public static void calculatingTotalCost(List<Product> products, String category, Integer price) {
         double totalCost  = products.stream()
                 .filter(product -> product.getDateOfAddition().getYear() == LocalDateTime.now().getYear())
-                .filter(product -> product.getType().equals(category))
-                .filter(product -> product.getPrice() < price)
+                .filter(product -> product.getType().equals(category) && product.getPrice() < price)
                 .mapToDouble(Product::getPrice)
                 .sum();
         System.out.println("Total cost of products, the price of which does not exceed the specified price " + totalCost);
